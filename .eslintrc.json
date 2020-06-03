@@ -13,11 +13,25 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 11,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "plugins": [
         "@typescript-eslint"
     ],
     "rules": {
+        "no-trailing-spaces": "off",
+        "array-bracket-spacing": "off",
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "implicit-arrow-linebreak": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
     }
 }

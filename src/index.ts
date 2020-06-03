@@ -1,11 +1,11 @@
 import './style.scss';
-import _ from 'lodash';
+import { createElement } from './framework';
 
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const App = () =>
+  createElement('div', `
+    <div class="test">
+        test text
+    </div>
+  `);
 
-  return element;
-}
-
-document.body.appendChild(component());
+document.querySelector('#root').appendChild(App());

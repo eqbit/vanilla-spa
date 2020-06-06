@@ -1,17 +1,27 @@
 import './style.scss';
 import { createElement } from './framework';
-import { Binding } from './framework/binding';
-import { state } from './framework/init';
 
-const App = createElement('div', 'test');
+const App = createElement({
+  value: 'sds',
+});
 
-// @ts-ignore
-new Binding({
-  object: state,
-  property: 'a',
-}).addBinding(App, 'innerHTML');
+const App2 = createElement({
+  value: 'dsdad',
+});
 
-document.querySelector('#root').appendChild(App);
+document.querySelector('#root').appendChild(App.element);
+document.querySelector('#root').appendChild(App2.element);
 
+App.setValue('sdsd');
 
-state.a = 12455;
+setTimeout(() => {
+  App.setValue('1000');
+}, 1000);
+
+setTimeout(() => {
+  App2.setValue('2000 2');
+}, 2000);
+
+setTimeout(() => {
+  App.setValue('3000');
+}, 3000);

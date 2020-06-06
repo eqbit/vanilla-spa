@@ -1,4 +1,4 @@
-export function Binding(b: any) {
+export function Binding(b: any): void {
   const _this = this;
   this.elementBindings = [];
   this.value = b.object[b.property];
